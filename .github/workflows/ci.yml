@@ -1,22 +1,36 @@
 name: CI
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches: [main]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
       - run: npm install
       - run: npm run validate
+
       - run: npm run build
         env:
           SITE_URL: https://4173842.xyz
           DEPLOY_ENV: staging
           GITHUB_REPO: codebdbd/aitecommander
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - run: npm run check:links
+
+      - name: Upload staging build
+        uses: actions/upload-artifact@v4
+        with:
+          name: aitecommander-site-staging
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
