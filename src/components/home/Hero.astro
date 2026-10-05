@@ -5,8 +5,8 @@ import type { Locale } from '@/i18n/config';
 
 const { locale = 'ru' } = Astro.props as { locale?: Locale };
 ---
-<section class="hero section">
-  <div class="container hero-grid">
+<section class="hero hero-v2 section">
+  <div class="container hero-grid hero-grid-v2">
     <div class="hero-copy">
       <p class="eyebrow">{ru.home.hero.eyebrow}</p>
       <h1>{ru.home.hero.title}</h1>
@@ -15,18 +15,53 @@ const { locale = 'ru' } = Astro.props as { locale?: Locale };
       <div class="actions"><a class="button button-primary" href={localePath(locale, 'download')}>{ru.home.hero.cta}</a></div>
       <p class="resource-types">{ru.home.hero.resources}</p>
     </div>
-    <div class="product-placeholder" aria-label="Макет рабочего пространства Aite Commander">
-      <div class="window-bar"><span></span><span></span><span></span></div>
-      <div class="mock-body">
-        <aside><b>Работа</b><span>Проекты</span><span class="active">Проект сайта</span></aside>
-        <div class="mock-list">
-          <div><i>W</i><span>Figma</span></div>
-          <div><i>F</i><span>Техническое задание.docx</span></div>
-          <div><i>D</i><span>Материалы проекта</span></div>
-          <div><i>P</i><span>VS Code</span></div>
-          <div><i>S</i><span>Build project</span></div>
+
+    <div class="product-stage" aria-label="Представление интерфейса Aite Commander">
+      <div class="app-shot">
+        <div class="app-titlebar">
+          <div class="app-brandmark">A</div>
+          <strong>Aite Commander</strong>
+          <div class="window-actions"><span></span><span></span><span></span></div>
         </div>
+        <div class="app-toolbar">
+          <span class="tool-active">Работа</span>
+          <span>Поиск</span>
+          <span>Quick Look</span>
+          <span>Запустить</span>
+        </div>
+        <div class="app-workspace">
+          <aside class="app-tree">
+            <div class="tree-label">СФЕРЫ</div>
+            <div class="tree-row active"><b>▾</b><span>Работа</span></div>
+            <div class="tree-row indent"><b>▾</b><span>Клиенты</span></div>
+            <div class="tree-row indent2 selected"><b>●</b><span>Проект Alpha</span></div>
+            <div class="tree-row"><b>›</b><span>Личное</span></div>
+            <div class="tree-row"><b>›</b><span>Обучение</span></div>
+          </aside>
+          <section class="app-main">
+            <div class="app-path">Работа / Клиенты / <strong>Проект Alpha</strong></div>
+            <div class="resource-table">
+              <div class="resource-row head"><span>Ресурс</span><span>Тип</span><span>Статус</span></div>
+              <div class="resource-row"><span><i class="type web">W</i>Figma — макеты</span><span>Сайт</span><span>Готово</span></div>
+              <div class="resource-row selected"><span><i class="type file">F</i>Техническое задание.docx</span><span>Файл</span><span>Открыт</span></div>
+              <div class="resource-row"><span><i class="type folder">D</i>Материалы проекта</span><span>Папка</span><span>—</span></div>
+              <div class="resource-row"><span><i class="type app">P</i>VS Code</span><span>Программа</span><span>Готово</span></div>
+              <div class="resource-row"><span><i class="type script">S</i>build.ps1</span><span>Скрипт</span><span>Готово</span></div>
+            </div>
+          </section>
+          <aside class="quick-panel">
+            <div class="quick-head"><span>QUICK LOOK</span><b>ТЗ проекта</b></div>
+            <div class="doc-line wide"></div>
+            <div class="doc-line"></div>
+            <div class="doc-line wide"></div>
+            <div class="doc-block"></div>
+            <div class="doc-line"></div>
+            <div class="doc-line short"></div>
+          </aside>
+        </div>
+        <div class="app-status"><span>5 ресурсов</span><span>Ctrl+F Поиск</span><span>Space Quick Look</span></div>
       </div>
+      <div class="stage-caption"><b>Контекст задачи уже собран.</b><span>Остаётся работать.</span></div>
     </div>
   </div>
 </section>
