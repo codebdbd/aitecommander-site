@@ -2,13 +2,6 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/home/Hero.astro';
 
-const useCases = [
-  ['Ваш проект', 'Соберите сайты, папки, документы, программы и скрипты проекта в одном месте. Возвращайтесь к работе без повторного поиска.'],
-  ['Учитель → класс', 'Подготовьте учебный набор с материалами, заданиями, ссылками и нужными приложениями. Передайте его классу — у всех будет одинаковая структура.'],
-  ['Руководитель → команда', 'Создайте готовое рабочее окружение для проекта или онбординга и передайте его сотрудникам.'],
-  ['Новый проект из шаблона', 'Копируйте уже подготовленную структуру и меняйте только то, что относится к новому проекту.']
-];
-
 const softwareSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -21,141 +14,158 @@ const softwareSchema = {
   downloadUrl: 'https://github.com/codebdbd/aitecommander/releases/latest',
   description: 'Менеджер цифровых рабочих пространств для Windows: сайты, файлы, папки, программы и скрипты вокруг задачи.'
 };
-
-const features = [
-  ['Разные ресурсы в одной структуре', 'Сайты, файлы, папки, программы и скрипты становятся частями одного рабочего пространства.'],
-  ['Групповой запуск', 'Отметьте несколько ресурсов и запустите их вместе.'],
-  ['Quick Look', 'Просматривайте документы, изображения, PDF, таблицы, архивы, код и папки без запуска отдельной программы.'],
-  ['Поиск', 'Ищите по имени, URL, заметкам и аргументам, а также находите файлы на компьютере.'],
-  ['Браузерные профили', 'Открывайте веб-ресурсы через нужный браузер и профиль.'],
-  ['Копирование и повторное использование', 'Используйте готовые структуры как основу для новых задач и проектов.'],
-  ['Экспорт и импорт', 'Передавайте рабочие пространства между пользователями и компьютерами.'],
-  ['Резервное копирование', 'Создавайте резервные копии и восстанавливайте рабочую базу при необходимости.']
-];
 ---
 <BaseLayout title="Aite Commander — командный центр для Windows" description="Aite Commander — менеджер цифровых рабочих пространств для Windows. Собирайте сайты, файлы, папки, программы и скрипты вокруг задачи, используйте готовые наборы повторно и делитесь ими с другими." locale="ru" structuredData={softwareSchema}>
   <Hero locale="ru" />
 
-  <section class="section">
-    <div class="container narrow">
-      <p class="eyebrow">Что такое Aite Commander</p>
-      <h2>Всё, что нужно для задачи — в одном рабочем пространстве</h2>
-      <p class="lead">Aite Commander объединяет разрозненные цифровые ресурсы в понятную структуру. Сайты, документы, папки, программы и скрипты могут находиться рядом, если относятся к одной задаче, проекту или процессу.</p>
-      <p class="statement">Не по типу ресурса. По смыслу работы.</p>
+  <section class="proof-strip">
+    <div class="container proof-grid">
+      <div><strong>5 типов ресурсов</strong><span>Сайты, файлы, папки, программы, скрипты</span></div>
+      <div><strong>Один контекст</strong><span>Всё, что относится к задаче, рядом</span></div>
+      <div><strong>Повторное использование</strong><span>Собрали один раз — возвращаетесь к готовому</span></div>
+      <div><strong>Передача структуры</strong><span>От одного пользователя к другому</span></div>
     </div>
   </section>
 
-  <section class="section section-soft">
-    <div class="container two-col">
+  <section class="section manifesto">
+    <div class="container manifesto-grid">
       <div>
-        <p class="eyebrow">Проблема</p>
-        <h2>Не собирайте рабочее окружение заново каждый раз</h2>
-        <p class="lead">Обычно нужные ресурсы разбросаны по браузеру, папкам, программам, рабочему столу и терминалу. Каждый новый запуск задачи начинается с поиска: где документ, какая папка, какой сайт, что открыть и чем запустить.</p>
-        <p>Aite Commander сохраняет этот контекст как готовое рабочее пространство.</p>
+        <p class="eyebrow">Что такое Aite Commander</p>
+        <h2>Не ещё одна папка. Не ещё один список ссылок.</h2>
       </div>
-      <div class="before-after">
-        <article><span>До</span><strong>Поиск и сбор вручную</strong></article>
-        <article class="is-after"><span>После</span><strong>Готовый контекст в одной структуре</strong></article>
+      <div class="manifesto-copy">
+        <p>Aite Commander собирает разрозненные цифровые ресурсы вокруг реальной задачи. Документ может лежать рядом с сайтом, папкой проекта, приложением и скриптом — потому что они нужны в одном рабочем контексте.</p>
+        <p class="statement">Не по типу ресурса. По смыслу работы.</p>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section product-demo product-demo-dark">
+    <div class="container demo-grid">
+      <div class="demo-copy">
+        <p class="eyebrow eyebrow-on-dark">01 · Организация</p>
+        <h2>Рабочая структура, а не хаос по всему Windows</h2>
+        <p>Сфера → Раздел → Категория → Ресурс. Иерархия повторяет вашу работу, а не устройство файловой системы.</p>
+        <div class="demo-tags"><span>Сфера</span><b>→</b><span>Раздел</span><b>→</b><span>Категория</span><b>→</b><span>Ресурс</span></div>
+      </div>
+      <div class="structure-board" aria-label="Пример структуры рабочего пространства">
+        <div class="structure-head"><span>РАБОЧЕЕ ПРОСТРАНСТВО</span><strong>Проект Alpha</strong></div>
+        <div class="structure-line l1"><b>Работа</b><span>Сфера</span></div>
+        <div class="structure-line l2"><b>Клиенты</b><span>Раздел</span></div>
+        <div class="structure-line l3"><b>Проект Alpha</b><span>Категория</span></div>
+        <div class="structure-resources">
+          <span>Figma</span><span>ТЗ.docx</span><span>Материалы</span><span>VS Code</span><span>build.ps1</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section product-demo">
+    <div class="container demo-grid reverse">
+      <div class="search-visual" aria-label="Поиск и Quick Look">
+        <div class="search-box">⌕ <span>договор alpha</span><kbd>Ctrl F</kbd></div>
+        <div class="search-result active"><b>Договор Alpha.pdf</b><span>Работа / Клиенты / Alpha</span></div>
+        <div class="search-result"><b>Техническое задание.docx</b><span>Работа / Клиенты / Alpha</span></div>
+        <div class="preview-sheet">
+          <div class="preview-label">QUICK LOOK · SPACE</div>
+          <strong>Договор Alpha</strong>
+          <div class="preview-lines"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="demo-copy">
+        <p class="eyebrow">02 · Найти и посмотреть</p>
+        <h2>Нужный ресурс находится до того, как вы потеряли мысль</h2>
+        <p>Полнотекстовый поиск работает по имени, URL, заметкам и аргументам. Quick Look позволяет быстро проверить содержимое, не разрывая рабочий контекст.</p>
+        <div class="fact-row"><span>PDF</span><span>DOCX</span><span>XLSX</span><span>CSV</span><span>Код</span><span>Архивы</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section product-demo section-soft">
+    <div class="container demo-grid">
+      <div class="demo-copy">
+        <p class="eyebrow">03 · Запустить</p>
+        <h2>Не открывайте рабочий день по одному окну</h2>
+        <p>Отметьте нужные ресурсы и запускайте их вместе. Для веб-ресурсов можно использовать нужный браузер и профиль.</p>
+        <div class="launch-sequence">
+          <span>Figma</span><span>Папка проекта</span><span>VS Code</span><span>Документация</span>
+        </div>
+      </div>
+      <div class="launch-panel">
+        <div class="launch-title"><span>ГРУППОВОЙ ЗАПУСК</span><strong>Проект Alpha</strong></div>
+        <label><input type="checkbox" checked disabled /> Figma — макеты</label>
+        <label><input type="checkbox" checked disabled /> Папка проекта</label>
+        <label><input type="checkbox" checked disabled /> VS Code</label>
+        <label><input type="checkbox" checked disabled /> Документация</label>
+        <button disabled>Запустить 4 ресурса</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section share-story">
     <div class="container">
-      <p class="eyebrow">Как это работает</p>
-      <h2>Организуйте работу так, как она устроена у вас</h2>
-      <p class="lead">Aite Commander использует четырёхуровневую структуру.</p>
-      <div class="hierarchy" aria-label="Сфера, Раздел, Категория, Ресурс">
-        <div>Сфера</div><b>→</b><div>Раздел</div><b>→</b><div>Категория</div><b>→</b><div>Ресурс</div>
+      <div class="share-heading">
+        <p class="eyebrow eyebrow-on-dark">04 · Передать</p>
+        <h2>Делитесь не инструкцией «что открыть», а готовой рабочей структурой</h2>
       </div>
-      <div class="example-box">
-        <span>Пример</span>
-        <p><strong>Работа → Клиенты → Проект Alpha</strong> → Figma, GitHub, договор, папка проекта, скрипт сборки.</p>
+      <div class="share-flow-v2">
+        <div class="person-node"><span>1</span><b>Создатель</b><small>собирает контекст</small></div>
+        <div class="flow-line"><i></i><strong>.aitesec</strong></div>
+        <div class="package-node"><b>Проект Alpha</b><span>структура + ресурсы</span></div>
+        <div class="flow-line"><i></i><strong>Импорт</strong></div>
+        <div class="recipients">
+          <div><span>2</span><b>Команда</b></div>
+          <div><span>3</span><b>Класс</b></div>
+          <div><span>4</span><b>Клиент</b></div>
+        </div>
       </div>
-      <div class="resource-pills" aria-label="Поддерживаемые типы ресурсов">
-        <span>Сайт</span><span>Файл</span><span>Папка</span><span>Программа</span><span>Скрипт</span>
-      </div>
+      <p class="share-note">Разделы, категории и отдельные ресурсы можно экспортировать и импортировать. При необходимости пакет включает связанные локальные файлы рабочего пространства.</p>
+      <a class="button button-light" href="/ru/features/#sharing">Подробнее о передаче</a>
     </div>
   </section>
 
-  <section class="section section-soft">
+  <section class="section scenarios-v2">
     <div class="container">
-      <p class="eyebrow">Центральная модель</p>
-      <h2>Собрать → Использовать → Поделиться</h2>
-      <div class="card-grid">
-        <article class="card"><span class="step-number">01</span><h3>Собрать</h3><p>Создайте рабочее пространство вокруг задачи и добавьте всё необходимое.</p></article>
-        <article class="card"><span class="step-number">02</span><h3>Использовать</h3><p>Находите, просматривайте и запускайте нужные ресурсы из одного места.</p></article>
-        <article class="card"><span class="step-number">03</span><h3>Поделиться</h3><p>Передайте готовое рабочее пространство другому человеку или группе.</p></article>
+      <div class="section-heading-row">
+        <div><p class="eyebrow">Сценарии</p><h2>Один инструмент — четыре режима работы</h2></div>
+        <a href="/ru/use-cases/">Все сценарии →</a>
       </div>
-      <p class="section-note">Aite Commander нужен не только для личной организации. Он позволяет воспроизводить одинаковую рабочую структуру у других пользователей.</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Сценарии</p>
-      <h2>Один принцип — разные задачи</h2>
-      <p class="lead">Рабочее пространство может быть личным, командным, учебным или использоваться как шаблон для повторяющегося процесса.</p>
-      <div class="card-grid usecase-preview">
-        {useCases.map(([title, body]) => <article class="card"><h3>{title}</h3><p>{body}</p></article>)}
-      </div>
-      <div class="section-actions"><a class="button button-secondary" href="/ru/use-cases/">Посмотреть сценарии</a></div>
-    </div>
-  </section>
-
-  <section class="section sharing">
-    <div class="container two-col">
-      <div>
-        <p class="eyebrow">Передача рабочих пространств</p>
-        <h2>Делитесь не списком ссылок, а готовой рабочей средой</h2>
-        <p class="lead">Экспортируйте раздел, категорию или отдельный ресурс и передайте его другому пользователю Aite Commander. Получатель импортирует пакет и получает ту же организованную структуру.</p>
-        <p>При необходимости пакет может включать связанные локальные файлы рабочего пространства.</p>
-        <div class="package-list"><span>Раздел — .aitesec</span><span>Категория — .aitecat</span><span>Ресурс — .aitelink</span></div>
-        <a class="button button-light" href="/ru/features/#sharing">Подробнее о передаче</a>
-      </div>
-      <div class="share-diagram" aria-label="Создатель передаёт пакет нескольким получателям">
-        <div>Создатель</div><b>→</b><div>Пакет</div><b>→</b><div>Получатели</div>
+      <div class="scenario-matrix">
+        <article><span>01</span><h3>Для себя</h3><p>Повторяющиеся проекты, исследования, личные рабочие наборы.</p></article>
+        <article><span>02</span><h3>Для команды</h3><p>Онбординг, проектные окружения, единая структура ресурсов.</p></article>
+        <article><span>03</span><h3>Для обучения</h3><p>Учитель собирает материалы один раз и передаёт классу.</p></article>
+        <article><span>04</span><h3>Для клиента</h3><p>Специалист отдаёт не россыпь ссылок, а организованный пакет.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Возможности</p>
-      <h2>Всё необходимое для работы с контекстом</h2>
-      <div class="feature-grid">
-        {features.map(([title, body]) => <article class="feature-card"><h3>{title}</h3><p>{body}</p></article>)}
-      </div>
-      <div class="section-actions"><a class="button button-secondary" href="/ru/features/">Все возможности</a></div>
-    </div>
-  </section>
-
-  <section class="section trust-section">
-    <div class="container two-col">
+  <section class="section trust-v2">
+    <div class="container trust-v2-grid">
       <div>
         <p class="eyebrow">Local-first</p>
-        <h2>Ваше рабочее пространство остаётся вашим</h2>
-        <p class="lead">Aite Commander хранит основные данные локально на вашем компьютере. Для работы не требуется обязательная облачная учётная запись.</p>
-        <p>Продукт работает как локальный инструмент и не требует переносить рабочую структуру в стороннее облако.</p>
+        <h2>Рабочая база остаётся на вашем компьютере</h2>
+        <p class="lead">Основные данные хранятся локально в SQLite. Обязательная облачная учётная запись не нужна.</p>
       </div>
-      <ul class="trust-list">
-        <li>Windows 10/11</li>
-        <li>Локальная SQLite</li>
-        <li>Open source</li>
-        <li>GPL-3.0</li>
-        <li>Резервное копирование и восстановление</li>
-      </ul>
+      <div class="trust-specs">
+        <div><span>Система</span><b>Windows 10 / 11 · 64-bit</b></div>
+        <div><span>Хранилище</span><b>Локальная SQLite</b></div>
+        <div><span>Лицензия</span><b>GPL-3.0 · Open source</b></div>
+        <div><span>Надёжность</span><b>Backup / Restore</b></div>
+      </div>
     </div>
   </section>
 
-  <section class="section final-cta">
-    <div class="container narrow">
-      <h2>Соберите своё рабочее пространство</h2>
-      <p>Организуйте всё необходимое для задачи один раз — и возвращайтесь к готовому контексту в любой момент.</p>
-      <div class="actions actions-center">
-        <a class="button button-primary" href="/ru/download/">Скачать Aite Commander для Windows</a>
-        <a class="button button-secondary" href="/ru/docs/">Открыть документацию</a>
-        <a class="button button-secondary" href="https://github.com/codebdbd/aitecommander" rel="noopener noreferrer">GitHub</a>
+  <section class="download-band">
+    <div class="container download-band-grid">
+      <div>
+        <p class="eyebrow eyebrow-on-dark">Aite Commander 1.1.8</p>
+        <h2>Соберите своё рабочее пространство</h2>
+        <p>Установщик для Windows. Бесплатно, без регистрации и рекламы.</p>
+      </div>
+      <div class="download-band-actions">
+        <a class="button button-yellow" href="/ru/download/">Скачать для Windows</a>
+        <a class="text-link-dark" href="/ru/docs/">Документация →</a>
+        <a class="text-link-dark" href="https://github.com/codebdbd/aitecommander" rel="noopener noreferrer">GitHub →</a>
       </div>
     </div>
   </section>
