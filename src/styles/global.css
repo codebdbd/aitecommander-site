@@ -459,3 +459,104 @@ a:focus-visible,button:focus-visible,summary:focus-visible { outline: 3px solid 
     letter-spacing: -.03em;
   }
 }
+
+
+/* Typography system v3 */
+body {
+  font-family: "Segoe UI Variable", "Segoe UI", Inter, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+h1, h2, h3 {
+  font-family: "Segoe UI Variable Display", "Segoe UI Variable", "Segoe UI", Inter, Arial, sans-serif;
+  color: var(--navy);
+  letter-spacing: -0.028em;
+}
+
+h1 { font-weight: 700; }
+h2 { font-weight: 680; line-height: 1.12; }
+h3 { font-weight: 650; line-height: 1.2; }
+
+.eyebrow {
+  color: #5f7185;
+  text-transform: none;
+  letter-spacing: .015em;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.hero-v2 {
+  padding-top: 82px;
+  padding-bottom: 74px;
+}
+
+.hero-v2 .hero-copy {
+  max-width: 600px;
+}
+
+.hero-v2 .eyebrow {
+  color: #607286;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: .01em;
+  text-transform: none;
+  margin-bottom: 18px;
+}
+
+.hero-v2 h1 {
+  max-width: 600px;
+  font-size: clamp(44px, 3vw, 52px);
+  line-height: 1.045;
+  letter-spacing: -0.038em;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-wrap: balance;
+}
+
+.hero-v2 .lead {
+  max-width: 570px;
+  font-size: clamp(18px, 1.2vw, 20px);
+  line-height: 1.5;
+  font-weight: 400;
+  color: #24384f;
+  margin-bottom: 18px;
+}
+
+.hero-v2 .trust {
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.hero-v2 .resource-types {
+  color: #66788c;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.hero-v2 .button {
+  font-weight: 650;
+}
+
+.site-header .brand {
+  font-weight: 700;
+}
+
+.main-nav > a:not(.button) {
+  font-weight: 600;
+}
+
+.button {
+  font-weight: 650;
+}
+
+@media (max-width: 720px) {
+  .hero-v2 h1 {
+    font-size: clamp(38px, 10vw, 46px);
+    line-height: 1.06;
+  }
+}
