@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Решение проблем — Aite Commander" description="Типовые проблемы и диагностика Aite Commander." locale="ru">
+<section class="section"><div class="container docs-article">
+<p class="eyebrow">Документация</p><h1>Решение проблем</h1>
+<h2>Фавиконка сайта не обновилась</h2>
+<p>Используйте <kbd>Ctrl+Alt+H</kbd> для принудительного обновления кэша иконок или выберите иконку вручную при редактировании ресурса.</p>
+<h2>Файл или скрипт не найден</h2>
+<p>Проверьте путь в редакторе ресурса. Если путь или аргументы содержат пробелы, используйте кавычки.</p>
+<h2>Перенос на новый компьютер</h2>
+<p>Экспортируйте базу через <kbd>Ctrl+Alt+S</kbd>, затем на новом компьютере импортируйте её через <kbd>Ctrl+Alt+D</kbd>.</p>
+<h2>Где находятся логи</h2>
+<p><code>%APPDATA%\Codebdbd\Aite Commander\logs\app.log</code></p>
+<h2>Как сбросить настройки интерфейса</h2>
+<p>Закройте приложение и удалите <code>settings.ini</code> из каталога <code>%APPDATA%\Codebdbd\Aite Commander\</code>. База <code>links.db</code> при этом остаётся на месте.</p>
+<div class="docs-nav"><a href="/ru/docs/hotkeys/">← Горячие клавиши</a><a href="/ru/docs/">К оглавлению →</a></div>
+</div></section>
+</BaseLayout>

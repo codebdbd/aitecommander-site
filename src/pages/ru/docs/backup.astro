@@ -1,0 +1,13 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Резервное копирование — Aite Commander" description="SQLite, резервные копии и восстановление базы Aite Commander." locale="ru">
+<section class="section"><div class="container docs-article">
+<p class="eyebrow">Документация</p><h1>Резервное копирование</h1>
+<p>Aite Commander хранит рабочую базу в SQLite и использует механизмы резервного копирования и восстановления базы.</p>
+<p>Для восстановления из резервной копии используется <kbd>Ctrl+Alt+B</kbd>.</p>
+<p>Текущая реализация также включает WAL checkpoints, проверку целостности и переносимые ZIP-пакеты резервной копии.</p>
+<p>Для полного экспорта и подключения структуры используются <kbd>Ctrl+Alt+S</kbd> и <kbd>Ctrl+Alt+D</kbd>.</p>
+<div class="docs-nav"><a href="/ru/docs/share/">← Передача</a><a href="/ru/docs/hotkeys/">Горячие клавиши →</a></div>
+</div></section>
+</BaseLayout>

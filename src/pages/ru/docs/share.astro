@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Передача рабочих пространств — Aite Commander" description="Экспорт и импорт пакетов .aitesec, .aitecat и .aitelink в Aite Commander." locale="ru">
+<section class="section"><div class="container docs-article">
+<p class="eyebrow">Документация</p><h1>Передача рабочих пространств</h1>
+<p class="lead">Aite Commander умеет экспортировать части структуры в переносимые пакеты.</p>
+<ul>
+<li><strong>.aitesec</strong> — раздел.</li>
+<li><strong>.aitecat</strong> — категория.</li>
+<li><strong>.aitelink</strong> — отдельный ресурс.</li>
+</ul>
+<p>Пакеты могут включать связанные файлы рабочего пространства. Для этих форматов предусмотрена интеграция с Windows: файловые ассоциации, открытие двойным кликом и импорт через Drag & Drop.</p>
+<p>При импорте возможны конфликты имён; приложение предусматривает отдельный диалог их разрешения.</p>
+<p>Передача пакета не означает автоматическую установку внешних программ, отсутствующих на компьютере получателя.</p>
+<div class="docs-nav"><a href="/ru/docs/quick-look/">← Quick Look</a><a href="/ru/docs/backup/">Резервное копирование →</a></div>
+</div></section>
+</BaseLayout>

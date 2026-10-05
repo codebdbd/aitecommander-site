@@ -1,5 +1,37 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-const topics = ['Начало работы','Интерфейс','Структура','Типы ресурсов','Quick Look','Поиск','Групповой запуск','Браузеры и профили','Экспорт и импорт','Резервное копирование','Горячие клавиши','Настройки','Решение проблем'];
+
+const topics = [
+  ['Начало работы', 'Установка, первый запуск и системные требования.', '/ru/docs/getting-started/'],
+  ['Структура', 'Как устроены сферы, разделы, категории и ресурсы.', '/ru/docs/structure/'],
+  ['Типы ресурсов', 'Web, File, Folder, Program и Script.', '/ru/docs/resources/'],
+  ['Поиск', 'Полнотекстовый поиск и расширенный поиск файлов.', '/ru/docs/search/'],
+  ['Quick Look', 'Быстрый просмотр файлов по клавише Пробел.', '/ru/docs/quick-look/'],
+  ['Передача', 'Пакеты .aitesec, .aitecat и .aitelink.', '/ru/docs/share/'],
+  ['Резервное копирование', 'SQLite, бэкапы и восстановление.', '/ru/docs/backup/'],
+  ['Горячие клавиши', 'Основные сочетания для навигации и действий.', '/ru/docs/hotkeys/'],
+  ['Решение проблем', 'Типовые проблемы и диагностика.', '/ru/docs/troubleshooting/']
+];
 ---
-<BaseLayout title="Документация Aite Commander" description="Практические инструкции по Aite Commander." locale="ru"><section class="section"><div class="container"><p class="eyebrow">Документация</p><h1>Документация Aite Commander</h1><div class="card-grid">{topics.map(t => <article class="card"><h2 class="card-title">{t}</h2><p>Раздел подготовлен к переносу материалов из актуального USER_GUIDE_RU.md.</p></article>)}</div></div></section></BaseLayout>
+<BaseLayout title="Документация Aite Commander" description="Практические инструкции по установке, структуре, поиску, Quick Look, передаче, резервному копированию и горячим клавишам Aite Commander." locale="ru">
+  <section class="section page-intro">
+    <div class="container narrow">
+      <p class="eyebrow">Документация</p>
+      <h1>Документация Aite Commander</h1>
+      <p class="lead">Практические инструкции по настройке и использованию Aite Commander.</p>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="container">
+      <div class="docs-grid">
+        {topics.map(([title, body, href], index) => (
+          <a class="docs-card" href={href}>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h2>{title}</h2>
+            <p>{body}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

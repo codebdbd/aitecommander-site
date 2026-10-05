@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const types = [
+ ['Web','Веб-ресурс. Может открываться через выбранный браузер и профиль.'],
+ ['File','Локальный файл.'],
+ ['Folder','Локальная папка.'],
+ ['Program','Программа или приложение; поддерживаются ярлыки Windows.'],
+ ['Script','Скрипт автоматизации с параметрами запуска.']
+];
+---
+<BaseLayout title="Типы ресурсов — Aite Commander" description="Пять типов ресурсов Aite Commander: Web, File, Folder, Program и Script." locale="ru">
+<section class="section"><div class="container docs-article">
+<p class="eyebrow">Документация</p><h1>Типы ресурсов</h1>
+<p class="lead">Aite Commander поддерживает пять основных типов рабочих объектов.</p>
+<div class="docs-type-grid">{types.map(([title,body]) => <article class="card"><h2 class="card-title">{title}</h2><p>{body}</p></article>)}</div>
+<p>Для ресурсов также доступны заметки, избранное и операции Drag & Drop.</p>
+<div class="docs-nav"><a href="/ru/docs/structure/">← Структура</a><a href="/ru/docs/search/">Поиск →</a></div>
+</div></section>
+</BaseLayout>

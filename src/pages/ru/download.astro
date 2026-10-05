@@ -1,7 +1,81 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import release from '@/lib/release';
+import { site } from '@/data/site';
+
+const published = release.publishedAt
+  ? new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(release.publishedAt))
+  : null;
+const installerSize = release.installer.size
+  ? `${(release.installer.size / 1024 / 1024).toFixed(1)} МБ`
+  : null;
 ---
-<BaseLayout title="Скачать Aite Commander" description="Скачать актуальную версию Aite Commander для Windows 10/11." locale="ru">
-<section class="section"><div class="container narrow"><p class="eyebrow">Версия {release.version}</p><h1>Скачать Aite Commander</h1><p class="lead">Windows 10/11 · 64-bit · GPL-3.0</p><div class="download-grid"><article class="card"><h2>Installer</h2><p>{release.installer.name}</p>{release.installer.available ? <a class="button button-primary" href={release.installer.url}>Скачать Installer</a> : <p>Временно недоступно.</p>}</article><article class="card"><h2>Portable</h2>{release.portable.available ? <a class="button button-secondary" href={release.portable.url || release.releaseUrl}>Скачать Portable</a> : <div><p>Официальный Portable asset пока не опубликован.</p><a href={release.releaseUrl}>Открыть GitHub Releases</a></div>}</article></div><p class="muted">Опубликованная версия берётся из GitHub Releases, а не из состояния ветки main.</p></div></section>
+<BaseLayout title="Скачать Aite Commander" description="Скачать актуальную официальную версию Aite Commander для Windows 10/11." locale="ru">
+  <section class="section page-intro">
+    <div class="container narrow">
+      <p class="eyebrow">Версия {release.version}</p>
+      <h1>Скачать Aite Commander</h1>
+      <p class="lead">Aite Commander работает на Windows 10 и Windows 11.</p>
+      {published && <p class="muted">Последний официальный релиз опубликован {published}.</p>}
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="download-grid">
+        <article class="download-card is-primary">
+          <div>
+            <p class="eyebrow">Рекомендуется</p>
+            <h2>Installer</h2>
+            <p>Обычная установка для постоянного использования на компьютере.</p>
+          </div>
+          <dl class="meta-list">
+            <div><dt>Файл</dt><dd>{release.installer.name}</dd></div>
+            {installerSize && <div><dt>Размер</dt><dd>{installerSize}</dd></div>}
+            <div><dt>Версия</dt><dd>{release.version}</dd></div>
+          </dl>
+          {release.installer.available
+            ? <a class="button button-primary" href={release.installer.url}>Скачать Installer</a>
+            : <p>Installer временно недоступен.</p>}
+        </article>
+
+        <article class="download-card">
+          <div>
+            <p class="eyebrow">Статус</p>
+            <h2>Portable</h2>
+            <p>В текущем официальном release workflow публикуется только Installer. Portable-asset в последнем релизе отсутствует.</p>
+          </div>
+          <a class="button button-secondary" href={release.releaseUrl} rel="noopener noreferrer">Открыть GitHub Releases</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Системные требования</p>
+        <h2>Что нужно для запуска</h2>
+      </div>
+      <ul class="feature-list">
+        <li>Windows 10 или Windows 11, 64-bit</li>
+        <li>Около 150 МБ свободного места</li>
+        <li>Экран от 1024×768, HiDPI поддерживается</li>
+        <li>Python 3.12+ нужен только при запуске из исходников</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container narrow">
+      <p class="eyebrow">Дополнительно</p>
+      <h2>Исходный код и документация</h2>
+      <div class="actions">
+        <a class="button button-secondary" href={site.githubReleases} rel="noopener noreferrer">GitHub Releases</a>
+        <a class="button button-secondary" href={site.githubRepository} rel="noopener noreferrer">Исходный код</a>
+        <a class="button button-secondary" href="/ru/docs/">Документация</a>
+        <a class="button button-secondary" href="/ru/license/">GPL-3.0</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

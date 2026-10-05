@@ -1,0 +1,15 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Структура — Aite Commander" description="Четырёхуровневая структура Aite Commander: Сфера, Раздел, Категория, Ресурс." locale="ru">
+<section class="section"><div class="container docs-article">
+<p class="eyebrow">Документация</p><h1>Структура рабочего пространства</h1>
+<p class="lead">Aite Commander использует четырёхуровневую модель.</p>
+<div class="hierarchy"><div>Сфера</div><b>→</b><div>Раздел</div><b>→</b><div>Категория</div><b>→</b><div>Ресурс</div></div>
+<h2>Сфера</h2><p>Контекст верхнего уровня. Сферы разделяют окружения друг от друга, например «Работа» и «Личное».</p>
+<h2>Раздел</h2><p>Крупная тематическая область внутри сферы, например «Проекты» или «Финансы».</p>
+<h2>Категория</h2><p>Группа ресурсов внутри раздела.</p>
+<h2>Ресурс</h2><p>Непосредственный рабочий объект: веб-страница, файл, папка, программа или скрипт.</p>
+<div class="docs-nav"><a href="/ru/docs/getting-started/">← Начало работы</a><a href="/ru/docs/resources/">Типы ресурсов →</a></div>
+</div></section>
+</BaseLayout>

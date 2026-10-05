@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const keys = [
+ ['Enter','Запустить выбранный ресурс или войти в категорию'],
+ ['F1','Добавить ресурс'],
+ ['F2','Редактировать выбранный объект'],
+ ['F3','Создать раздел'],
+ ['F4','Создать категорию'],
+ ['F7','Открыть настройки'],
+ ['F8','Поиск файлов'],
+ ['Del','Удалить выбранный элемент'],
+ ['Ctrl+Z','Undo'],
+ ['Ctrl+Y / Ctrl+Shift+Z','Redo'],
+ ['Ctrl+F','Перейти к быстрому поиску'],
+ ['Пробел','Quick Look'],
+ ['Ctrl+N','Заметки'],
+ ['Ctrl+D','Переключить избранное'],
+ ['Alt+1…9','Запуск ресурсов из панели избранного']
+];
+---
+<BaseLayout title="Горячие клавиши — Aite Commander" description="Основные горячие клавиши Aite Commander." locale="ru">
+<section class="section"><div class="container docs-article">
+<p class="eyebrow">Документация</p><h1>Горячие клавиши</h1>
+<p class="lead">В Aite Commander предусмотрено более 40 настраиваемых сочетаний. Ниже — основные.</p>
+<div class="hotkey-table">{keys.map(([key, action]) => <div><kbd>{key}</kbd><span>{action}</span></div>)}</div>
+<div class="docs-nav"><a href="/ru/docs/backup/">← Резервное копирование</a><a href="/ru/docs/troubleshooting/">Решение проблем →</a></div>
+</div></section>
+</BaseLayout>

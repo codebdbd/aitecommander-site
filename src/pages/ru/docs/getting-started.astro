@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Начало работы — Aite Commander" description="Установка, запуск и системные требования Aite Commander." locale="ru">
+<section class="section"><div class="container docs-article">
+<p class="eyebrow">Документация</p><h1>Начало работы</h1>
+<h2>Системные требования</h2>
+<ul>
+<li>Windows 10 или Windows 11, 64-bit.</li>
+<li>Около 150 МБ свободного места.</li>
+<li>Разрешение экрана от 1024×768; поддерживается HiDPI.</li>
+<li>Python 3.12+ требуется только при запуске из исходников.</li>
+</ul>
+<h2>Установка</h2>
+<p>Для обычной установки запустите <code>AiteCommander-Setup-&lt;версия&gt;.exe</code> и пройдите мастер установки.</p>
+<h2>Запуск из исходников</h2>
+<pre><code>.\.venv\Scripts\python.exe -m app.main</code></pre>
+<p>Также проект поддерживает запуск через <code>main.py</code> или <code>aitecommander.bat</code>.</p>
+<div class="docs-nav"><a href="/ru/docs/">← Документация</a><a href="/ru/docs/structure/">Структура →</a></div>
+</div></section>
+</BaseLayout>
