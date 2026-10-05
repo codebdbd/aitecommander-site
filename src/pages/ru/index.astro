@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/home/Hero.astro';
+import Icon from '@/components/ui/Icon.astro';
 
 const softwareSchema = {
   '@context': 'https://schema.org',
@@ -20,10 +21,10 @@ const softwareSchema = {
 
   <section class="proof-strip">
     <div class="container proof-grid">
-      <div><strong>5 типов ресурсов</strong><span>Сайты, файлы, папки, программы, скрипты</span></div>
-      <div><strong>Один контекст</strong><span>Всё, что относится к задаче, рядом</span></div>
-      <div><strong>Повторное использование</strong><span>Собрали один раз — возвращаетесь к готовому</span></div>
-      <div><strong>Передача структуры</strong><span>От одного пользователя к другому</span></div>
+      <div><Icon name="resources" size={28} class="proof-icon" /><strong>5 типов ресурсов</strong><span>Сайты, файлы, папки, программы, скрипты</span></div>
+      <div><Icon name="context" size={28} class="proof-icon" /><strong>Один контекст</strong><span>Всё, что относится к задаче, рядом</span></div>
+      <div><Icon name="repeat" size={28} class="proof-icon" /><strong>Повторное использование</strong><span>Собрали один раз — возвращаетесь к готовому</span></div>
+      <div><Icon name="share" size={28} class="proof-icon" /><strong>Передача структуры</strong><span>От одного пользователя к другому</span></div>
     </div>
   </section>
 
@@ -63,11 +64,11 @@ const softwareSchema = {
   <section class="section product-demo">
     <div class="container demo-grid reverse">
       <div class="search-visual" aria-label="Поиск и Quick Look">
-        <div class="search-box">⌕ <span>договор alpha</span><kbd>Ctrl F</kbd></div>
+        <div class="search-box"><Icon name="search" size={19} /><span>договор alpha</span><kbd>Ctrl F</kbd></div>
         <div class="search-result active"><b>Договор Alpha.pdf</b><span>Работа / Клиенты / Alpha</span></div>
         <div class="search-result"><b>Техническое задание.docx</b><span>Работа / Клиенты / Alpha</span></div>
         <div class="preview-sheet">
-          <div class="preview-label">QUICK LOOK · SPACE</div>
+          <div class="preview-label"><Icon name="quick-look" size={15} />QUICK LOOK · SPACE</div>
           <strong>Договор Alpha</strong>
           <div class="preview-lines"><i></i><i></i><i></i><i></i><i></i></div>
         </div>
@@ -97,7 +98,7 @@ const softwareSchema = {
         <label><input type="checkbox" checked disabled /> Папка проекта</label>
         <label><input type="checkbox" checked disabled /> VS Code</label>
         <label><input type="checkbox" checked disabled /> Документация</label>
-        <button disabled>Запустить 4 ресурса</button>
+        <button disabled><Icon name="launch" size={18} />Запустить 4 ресурса</button>
       </div>
     </div>
   </section>
@@ -111,7 +112,7 @@ const softwareSchema = {
       <div class="share-flow-v2">
         <div class="person-node"><span>1</span><b>Создатель</b><small>собирает контекст</small></div>
         <div class="flow-line"><i></i><strong>.aitesec</strong></div>
-        <div class="package-node"><b>Проект Alpha</b><span>структура + ресурсы</span></div>
+        <div class="package-node"><Icon name="share" size={28} class="share-icon" /><b>Проект Alpha</b><span>структура + ресурсы</span></div>
         <div class="flow-line"><i></i><strong>Импорт</strong></div>
         <div class="recipients">
           <div><span>2</span><b>Команда</b></div>
@@ -170,3 +171,12 @@ const softwareSchema = {
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .proof-grid > div { position:relative; padding-left:70px; }
+  :global(.proof-icon) { position:absolute; left:22px; top:25px; }
+  .preview-label { display:flex; align-items:center; gap:7px; }
+  .launch-panel button { display:inline-flex; align-items:center; justify-content:center; gap:9px; }
+  :global(.share-icon) { display:block; margin-bottom:14px; }
+  @media (max-width:720px) { .proof-grid > div { padding-left:68px; } }
+</style>
