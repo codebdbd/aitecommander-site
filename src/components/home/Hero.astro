@@ -2,6 +2,7 @@
 import { ru } from '@/i18n/ru';
 import { localePath } from '@/lib/urls';
 import type { Locale } from '@/i18n/config';
+import Icon from '@/components/ui/Icon.astro';
 
 const { locale = 'ru' } = Astro.props as { locale?: Locale };
 ---
@@ -25,9 +26,9 @@ const { locale = 'ru' } = Astro.props as { locale?: Locale };
         </div>
         <div class="app-toolbar">
           <span class="tool-active">Работа</span>
-          <span>Поиск</span>
-          <span>Quick Look</span>
-          <span>Запустить</span>
+          <span><Icon name="search" size={15} />Поиск</span>
+          <span><Icon name="quick-look" size={15} />Quick Look</span>
+          <span><Icon name="launch" size={15} />Запустить</span>
         </div>
         <div class="app-workspace">
           <aside class="app-tree">
@@ -42,11 +43,11 @@ const { locale = 'ru' } = Astro.props as { locale?: Locale };
             <div class="app-path">Работа / Клиенты / <strong>Проект Alpha</strong></div>
             <div class="resource-table">
               <div class="resource-row head"><span>Ресурс</span><span>Тип</span><span>Статус</span></div>
-              <div class="resource-row"><span><i class="type web">W</i>Figma — макеты</span><span>Сайт</span><span>Готово</span></div>
-              <div class="resource-row selected"><span><i class="type file">F</i>Техническое задание.docx</span><span>Файл</span><span>Открыт</span></div>
-              <div class="resource-row"><span><i class="type folder">D</i>Материалы проекта</span><span>Папка</span><span>—</span></div>
-              <div class="resource-row"><span><i class="type app">P</i>VS Code</span><span>Программа</span><span>Готово</span></div>
-              <div class="resource-row"><span><i class="type script">S</i>build.ps1</span><span>Скрипт</span><span>Готово</span></div>
+              <div class="resource-row"><span><i class="type web"><Icon name="web" size={14} /></i>Figma — макеты</span><span>Сайт</span><span>Готово</span></div>
+              <div class="resource-row selected"><span><i class="type file"><Icon name="file" size={14} /></i>Техническое задание.docx</span><span>Файл</span><span>Открыт</span></div>
+              <div class="resource-row"><span><i class="type folder"><Icon name="folder" size={14} /></i>Материалы проекта</span><span>Папка</span><span>—</span></div>
+              <div class="resource-row"><span><i class="type app"><Icon name="app" size={14} /></i>VS Code</span><span>Программа</span><span>Готово</span></div>
+              <div class="resource-row"><span><i class="type script"><Icon name="script" size={14} /></i>build.ps1</span><span>Скрипт</span><span>Готово</span></div>
             </div>
           </section>
           <aside class="quick-panel">
@@ -65,3 +66,8 @@ const { locale = 'ru' } = Astro.props as { locale?: Locale };
     </div>
   </div>
 </section>
+
+<style>
+  .app-toolbar > span { display:inline-flex; align-items:center; gap:6px; }
+  .type { display:grid; place-items:center; }
+</style>
