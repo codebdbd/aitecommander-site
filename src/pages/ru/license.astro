@@ -1,4 +1,14 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { site } from '@/data/site';
 ---
-<BaseLayout title="Лицензия" description="Aite Commander распространяется под лицензией GPL-3.0." locale="ru"><section class="section"><div class="container narrow"><h1>Лицензия</h1><p class="lead">Aite Commander распространяется под лицензией GPL-3.0.</p></div></section></BaseLayout>
+<BaseLayout title="Лицензия — Aite Commander" description="Aite Commander распространяется под лицензией GNU GPL-3.0." locale="ru">
+  <section class="section">
+    <div class="container narrow">
+      <p class="eyebrow">Open source</p>
+      <h1>Лицензия</h1>
+      <p class="lead">Aite Commander распространяется под лицензией GNU General Public License v3.0 (GPL-3.0).</p>
+      <a class="button button-secondary" href={site.githubLicense} rel="noopener noreferrer">Открыть полный текст лицензии</a>
+    </div>
+  </section>
+</BaseLayout>

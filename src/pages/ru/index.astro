@@ -4,9 +4,9 @@ import Hero from '@/components/home/Hero.astro';
 import { ru } from '@/i18n/ru';
 ---
 <BaseLayout title="Aite Commander — командный центр для Windows" description="Собирайте сайты, файлы, папки, программы и скрипты вокруг задачи, используйте рабочий контекст повторно и делитесь им с другими." locale="ru">
-  <Hero />
+  <Hero locale="ru" />
   <section class="section"><div class="container narrow"><h2>{ru.home.problem.title}</h2><p class="lead">{ru.home.problem.body}</p></div></section>
   <section class="section section-soft"><div class="container"><h2>{ru.home.model.title}</h2><div class="card-grid">{ru.home.model.items.map(([title, body]) => <article class="card"><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
-  <section class="section sharing"><div class="container two-col"><div><p class="eyebrow">Sharing</p><h2>{ru.home.sharing.title}</h2><p class="lead">{ru.home.sharing.body}</p><p class="muted">Раздел — .aitesec · Категория — .aitecat · Ресурс — .aitelink</p></div><div class="share-diagram"><div>Создатель</div><b>→</b><div>Пакет</div><b>→</b><div>Получатели</div></div></div></section>
+  <section class="section sharing"><div class="container two-col"><div><p class="eyebrow">Передача рабочих пространств</p><h2>{ru.home.sharing.title}</h2><p class="lead">{ru.home.sharing.body}</p><p class="muted sharing-note">Раздел — .aitesec · Категория — .aitecat · Ресурс — .aitelink</p></div><div class="share-diagram" aria-label="Создатель передаёт пакет нескольким получателям"><div>Создатель</div><b>→</b><div>Пакет</div><b>→</b><div>Получатели</div></div></div></section>
   <section class="section final-cta"><div class="container narrow"><h2>{ru.home.final.title}</h2><p>{ru.home.final.body}</p><a class="button button-primary" href="/ru/download/">Скачать Aite Commander для Windows</a></div></section>
 </BaseLayout>

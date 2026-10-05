@@ -1,4 +1,30 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import release from '@/lib/release';
+
+const published = release.publishedAt
+  ? new Intl.DateTimeFormat('ru-RU', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(release.publishedAt))
+  : null;
 ---
-<BaseLayout title="Что нового в Aite Commander" description="История релизов будет формироваться из GitHub Releases на этапе сборки." locale="ru"><section class="section"><div class="container narrow"><h1>Что нового в Aite Commander</h1><p class="lead">История релизов будет формироваться из GitHub Releases на этапе сборки.</p></div></section></BaseLayout>
+<BaseLayout title="Что нового в Aite Commander" description="Актуальная опубликованная версия Aite Commander и переход к полной истории релизов на GitHub." locale="ru">
+  <section class="section">
+    <div class="container narrow">
+      <p class="eyebrow">Изменения</p>
+      <h1>Что нового в Aite Commander</h1>
+      <article class="release-card">
+        <div class="release-heading">
+          <div>
+            <h2>Версия {release.version}</h2>
+            {published && <p class="muted">Опубликована {published}</p>}
+          </div>
+          <span class="release-badge">Latest release</span>
+        </div>
+        <p>На сайте отображается последняя официально опубликованная версия. Полный список изменений и предыдущие версии находятся в GitHub Releases.</p>
+        <div class="actions">
+          <a class="button button-primary" href={release.releaseUrl} rel="noopener noreferrer">Открыть релиз на GitHub</a>
+          <a class="button button-secondary" href="/ru/download/">Скачать</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

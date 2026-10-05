@@ -1,6 +1,9 @@
 ---
 import { ru } from '@/i18n/ru';
 import { localePath } from '@/lib/urls';
+import type { Locale } from '@/i18n/config';
+
+const { locale = 'ru' } = Astro.props as { locale?: Locale };
 ---
 <section class="hero section">
   <div class="container hero-grid">
@@ -9,16 +12,16 @@ import { localePath } from '@/lib/urls';
       <h1>{ru.home.hero.title}</h1>
       <p class="lead">{ru.home.hero.subtitle}</p>
       <p class="trust">{ru.home.hero.trust}</p>
-      <div class="actions"><a class="button button-primary" href={localePath('ru', 'download')}>{ru.home.hero.cta}</a></div>
+      <div class="actions"><a class="button button-primary" href={localePath(locale, 'download')}>{ru.home.hero.cta}</a></div>
       <p class="resource-types">{ru.home.hero.resources}</p>
     </div>
-    <div class="product-placeholder" aria-label="Временный макет интерфейса Aite Commander">
+    <div class="product-placeholder" aria-label="Макет рабочего пространства Aite Commander">
       <div class="window-bar"><span></span><span></span><span></span></div>
       <div class="mock-body">
         <aside><b>Работа</b><span>Проекты</span><span class="active">Проект сайта</span></aside>
         <div class="mock-list">
-          <div><i>W</i><span>Сайт проекта</span></div>
-          <div><i>F</i><span>Техническое задание</span></div>
+          <div><i>W</i><span>Figma</span></div>
+          <div><i>F</i><span>Техническое задание.docx</span></div>
           <div><i>D</i><span>Материалы проекта</span></div>
           <div><i>P</i><span>VS Code</span></div>
           <div><i>S</i><span>Build project</span></div>
