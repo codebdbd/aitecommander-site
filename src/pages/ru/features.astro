@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const groups = [
+  ['Организация', 'Сферы, разделы, категории и ресурсы: сайты, файлы, папки, программы и скрипты.'],
+  ['Поиск и просмотр', 'Полнотекстовый поиск, поиск файлов и Quick Look.'],
+  ['Запуск', 'Одиночный и групповой запуск, браузеры и профили.'],
+  ['Передача', 'Копирование структур, экспорт и импорт .aitesec, .aitecat и .aitelink.'],
+  ['Надёжность', 'Undo/Redo, резервные копии, восстановление и проверка URL.'],
+  ['Персонализация', 'Темы, горячие клавиши и шесть языков интерфейса.']
+];
+---
+<BaseLayout title="Возможности Aite Commander" description="Ключевые возможности Aite Commander для организации, запуска, поиска и передачи цифровых рабочих пространств." locale="ru">
+  <section class="section"><div class="container"><p class="eyebrow">Возможности</p><h1>Возможности Aite Commander</h1><p class="lead">Организуйте цифровой рабочий контекст, быстро возвращайтесь к нему и передавайте готовые рабочие наборы другим.</p><div class="card-grid">{groups.map(([t,b]) => <article class="card"><h2 class="card-title">{t}</h2><p>{b}</p></article>)}</div></div></section>
+</BaseLayout>

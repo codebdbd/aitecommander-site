@@ -1,0 +1,34 @@
+---
+import { ru } from '@/i18n/ru';
+import { localePath } from '@/lib/urls';
+import { site } from '@/data/site';
+import type { Locale } from '@/i18n/config';
+
+const { locale = 'ru' } = Astro.props as { locale?: Locale };
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={localePath(locale)} aria-label="Aite Commander — главная">
+      <img src="/brand/logo.svg" width="36" height="36" alt="" />
+      <span>Aite Commander</span>
+    </a>
+    <nav class="main-nav" aria-label="Основная навигация">
+      <a href={localePath(locale, 'features')}>{ru.nav.features}</a>
+      <a href={localePath(locale, 'use-cases')}>{ru.nav.useCases}</a>
+      <a href={localePath(locale, 'docs')}>{ru.nav.docs}</a>
+      <a href={site.githubRepository} rel="noopener noreferrer">{ru.nav.github}</a>
+      <span class="locale-chip" aria-label="Текущий язык">RU</span>
+      <a class="button button-primary button-small" href={localePath(locale, 'download')}>{ru.nav.download}</a>
+    </nav>
+    <details class="mobile-menu">
+      <summary aria-label="Открыть меню">Меню</summary>
+      <div class="mobile-menu-panel">
+        <a href={localePath(locale, 'features')}>{ru.nav.features}</a>
+        <a href={localePath(locale, 'use-cases')}>{ru.nav.useCases}</a>
+        <a href={localePath(locale, 'docs')}>{ru.nav.docs}</a>
+        <a href={site.githubRepository} rel="noopener noreferrer">{ru.nav.github}</a>
+        <a class="button button-primary" href={localePath(locale, 'download')}>{ru.nav.download}</a>
+      </div>
+    </details>
+  </div>
+</header>

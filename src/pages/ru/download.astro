@@ -1,0 +1,7 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import release from '@/lib/release';
+---
+<BaseLayout title="Скачать Aite Commander" description="Скачать актуальную версию Aite Commander для Windows 10/11." locale="ru">
+<section class="section"><div class="container narrow"><p class="eyebrow">Версия {release.version}</p><h1>Скачать Aite Commander</h1><p class="lead">Windows 10/11 · 64-bit · GPL-3.0</p><div class="download-grid"><article class="card"><h2>Installer</h2><p>{release.installer.name}</p>{release.installer.available ? <a class="button button-primary" href={release.installer.url}>Скачать Installer</a> : <p>Временно недоступно.</p>}</article><article class="card"><h2>Portable</h2>{release.portable.available ? <a class="button button-secondary" href={release.portable.url || release.releaseUrl}>Скачать Portable</a> : <div><p>Официальный Portable asset пока не опубликован.</p><a href={release.releaseUrl}>Открыть GitHub Releases</a></div>}</article></div><p class="muted">Опубликованная версия берётся из GitHub Releases, а не из состояния ветки main.</p></div></section>
+</BaseLayout>

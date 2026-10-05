@@ -1,0 +1,5 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const topics = ['Начало работы','Интерфейс','Структура','Типы ресурсов','Quick Look','Поиск','Групповой запуск','Браузеры и профили','Экспорт и импорт','Резервное копирование','Горячие клавиши','Настройки','Решение проблем'];
+---
+<BaseLayout title="Документация Aite Commander" description="Практические инструкции по Aite Commander." locale="ru"><section class="section"><div class="container"><p class="eyebrow">Документация</p><h1>Документация Aite Commander</h1><div class="card-grid">{topics.map(t => <article class="card"><h2 class="card-title">{t}</h2><p>Раздел подготовлен к переносу материалов из актуального USER_GUIDE_RU.md.</p></article>)}</div></div></section></BaseLayout>

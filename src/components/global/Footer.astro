@@ -1,0 +1,17 @@
+---
+import { site } from '@/data/site';
+import { localePath } from '@/lib/urls';
+import type { Locale } from '@/i18n/config';
+const { locale = 'ru' } = Astro.props as { locale?: Locale };
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Aite Commander</strong>
+      <p>Менеджер цифровых рабочих пространств для Windows.</p>
+    </div>
+    <div><strong>Продукт</strong><a href={localePath(locale, 'features')}>Возможности</a><a href={localePath(locale, 'use-cases')}>Сценарии</a><a href={localePath(locale, 'download')}>Скачать</a><a href={localePath(locale, 'changelog')}>Изменения</a></div>
+    <div><strong>Помощь</strong><a href={localePath(locale, 'docs')}>Документация</a><a href={localePath(locale, 'faq')}>FAQ</a></div>
+    <div><strong>Проект</strong><a href={site.githubRepository}>GitHub</a><a href={localePath(locale, 'license')}>Лицензия</a><a href={localePath(locale, 'privacy')}>Конфиденциальность</a></div>
+  </div>
+</footer>

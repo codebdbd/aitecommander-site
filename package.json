@@ -1,0 +1,24 @@
+{
+  "name": "aitecommander-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "release:fetch": "node scripts/fetch-release.mjs",
+    "check": "astro check",
+    "validate": "npm run check && node scripts/validate-translations.mjs",
+    "build": "npm run release:fetch && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "typescript": "latest"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
