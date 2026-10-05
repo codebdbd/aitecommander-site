@@ -11,12 +11,24 @@ interface Props {
   description: string;
   locale?: Locale;
   ogType?: 'website' | 'article';
+  robots?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, locale = 'ru', ogType = 'website' } = Astro.props;
+const {
+  title,
+  description,
+  locale = 'ru',
+  ogType = 'website',
+  robots = 'index,follow',
+  structuredData
+} = Astro.props;
+
 const siteOrigin = Astro.site ?? Astro.url.origin;
 const canonical = new URL(Astro.url.pathname, siteOrigin);
 const pathWithoutLocale = Astro.url.pathname.replace(/^\/(ru|uk|en|de|fr|es)(?=\/|$)/, '').replace(/^\/+|\/+$/g, '');
+const schemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
+const serializeSchema = (value: Record<string, unknown>) => JSON.stringify(value).replace(/</g, '\\u003c');
 ---
 <!doctype html>
 <html lang={localeMeta[locale].htmlLang}>
@@ -24,6 +36,7 @@ const pathWithoutLocale = Astro.url.pathname.replace(/^\/(ru|uk|en|de|fr|es)(?=\
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={canonical} />
     {implementedLocales.map((code) => (
       <link
@@ -42,6 +55,7 @@ const pathWithoutLocale = Astro.url.pathname.replace(/^\/(ru|uk|en|de|fr|es)(?=\
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <link rel="icon" href="/brand/favicon.svg" type="image/svg+xml" />
+    {schemas.map((schema) => <script type="application/ld+json" set:html={serializeSchema(schema)} />)}
     <title>{title}</title>
   </head>
   <body>

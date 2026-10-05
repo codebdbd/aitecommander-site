@@ -9,6 +9,19 @@ const useCases = [
   ['Новый проект из шаблона', 'Копируйте уже подготовленную структуру и меняйте только то, что относится к новому проекту.']
 ];
 
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Aite Commander',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Windows 10, Windows 11',
+  softwareVersion: '1.1.8',
+  license: 'https://www.gnu.org/licenses/gpl-3.0.html',
+  url: 'https://github.com/codebdbd/aitecommander',
+  downloadUrl: 'https://github.com/codebdbd/aitecommander/releases/latest',
+  description: 'Менеджер цифровых рабочих пространств для Windows: сайты, файлы, папки, программы и скрипты вокруг задачи.'
+};
+
 const features = [
   ['Разные ресурсы в одной структуре', 'Сайты, файлы, папки, программы и скрипты становятся частями одного рабочего пространства.'],
   ['Групповой запуск', 'Отметьте несколько ресурсов и запустите их вместе.'],
@@ -20,7 +33,7 @@ const features = [
   ['Резервное копирование', 'Создавайте резервные копии и восстанавливайте рабочую базу при необходимости.']
 ];
 ---
-<BaseLayout title="Aite Commander — командный центр для Windows" description="Aite Commander — менеджер цифровых рабочих пространств для Windows. Собирайте сайты, файлы, папки, программы и скрипты вокруг задачи, используйте готовые наборы повторно и делитесь ими с другими." locale="ru">
+<BaseLayout title="Aite Commander — командный центр для Windows" description="Aite Commander — менеджер цифровых рабочих пространств для Windows. Собирайте сайты, файлы, папки, программы и скрипты вокруг задачи, используйте готовые наборы повторно и делитесь ими с другими." locale="ru" structuredData={softwareSchema}>
   <Hero locale="ru" />
 
   <section class="section">
