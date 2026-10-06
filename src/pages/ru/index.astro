@@ -47,6 +47,7 @@ const softwareSchema = {
         <p class="eyebrow eyebrow-on-dark">01 · Организация</p>
         <h2>Рабочая структура, а не хаос по всему Windows</h2>
         <p>Сфера → Раздел → Категория → Ресурс. Иерархия повторяет вашу работу, а не устройство файловой системы.</p>
+        <img class="organization-icon" src="/images/feature-icons/workspace.png" alt="" width="128" height="128" loading="lazy" decoding="async" />
         <div class="demo-tags"><span>Сфера</span><b>→</b><span>Раздел</span><b>→</b><span>Категория</span><b>→</b><span>Ресурс</span></div>
       </div>
       <div class="structure-board" aria-label="Пример структуры рабочего пространства">
@@ -77,10 +78,6 @@ const softwareSchema = {
         <p class="eyebrow">02 · Найти и посмотреть</p>
         <h2>Нужный ресурс находится до того, как вы потеряли мысль</h2>
         <p>Полнотекстовый поиск работает по имени, URL, заметкам и аргументам. Quick Look позволяет быстро проверить содержимое, не разрывая рабочий контекст.</p>
-        <div class="info-icon-pair" aria-label="Поиск и Quick Look">
-          <img src="/images/feature-icons/search.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
-          <img src="/images/feature-icons/quick-look.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
-        </div>
         <div class="fact-row"><span>PDF</span><span>DOCX</span><span>XLSX</span><span>CSV</span><span>Код</span><span>Архивы</span></div>
       </div>
     </div>
@@ -121,19 +118,19 @@ const softwareSchema = {
       </div>
       <div class="share-clean-steps">
         <div class="share-step">
-          <img src="/images/feature-icons/structure.png" alt="" width="92" height="92" loading="lazy" decoding="async" />
+          <div class="share-step-icon"><Icon name="resources" size={42} /></div>
           <span>01</span>
           <b>Соберите</b>
           <small>структуру и нужные ресурсы</small>
         </div>
         <div class="share-step">
-          <img src="/images/feature-icons/backup.png" alt="" width="92" height="92" loading="lazy" decoding="async" />
+          <div class="share-step-icon"><Icon name="file" size={42} /></div>
           <span>02</span>
           <b>Экспортируйте</b>
           <small>раздел, категорию или отдельный ресурс</small>
         </div>
         <div class="share-step">
-          <img src="/images/feature-icons/share.png" alt="" width="92" height="92" loading="lazy" decoding="async" />
+          <div class="share-step-icon"><Icon name="share" size={42} /></div>
           <span>03</span>
           <b>Передайте</b>
           <small>команде, классу или клиенту</small>
@@ -151,10 +148,10 @@ const softwareSchema = {
         <a href="/ru/use-cases/">Все сценарии →</a>
       </div>
       <div class="scenario-matrix">
-        <article><span>01</span><h3>Для себя</h3><p>Повторяющиеся проекты, исследования, личные рабочие наборы.</p></article>
-        <article><span>02</span><h3>Для команды</h3><p>Онбординг, проектные окружения, единая структура ресурсов.</p></article>
-        <article><span>03</span><h3>Для обучения</h3><p>Учитель собирает материалы один раз и передаёт классу.</p></article>
-        <article><span>04</span><h3>Для клиента</h3><p>Специалист отдаёт не россыпь ссылок, а организованный пакет.</p></article>
+        <article><img src="/images/feature-icons/personal.png" alt="" width="160" height="160" loading="lazy" decoding="async" /><span>01</span><h3>Для себя</h3><p>Повторяющиеся проекты, исследования, личные рабочие наборы.</p></article>
+        <article><img src="/images/feature-icons/team.png" alt="" width="160" height="160" loading="lazy" decoding="async" /><span>02</span><h3>Для команды</h3><p>Онбординг, проектные окружения, единая структура ресурсов.</p></article>
+        <article><img src="/images/feature-icons/education.png" alt="" width="160" height="160" loading="lazy" decoding="async" /><span>03</span><h3>Для обучения</h3><p>Учитель собирает материалы один раз и передаёт классу.</p></article>
+        <article><img src="/images/feature-icons/client.png" alt="" width="160" height="160" loading="lazy" decoding="async" /><span>04</span><h3>Для клиента</h3><p>Специалист отдаёт не россыпь ссылок, а организованный пакет.</p></article>
       </div>
     </div>
   </section>
@@ -166,8 +163,8 @@ const softwareSchema = {
         <h2>Рабочая база остаётся на вашем компьютере</h2>
         <p class="lead">Основные данные хранятся локально в SQLite. Обязательная облачная учётная запись не нужна.</p>
         <div class="trust-visual">
-          <img src="/images/feature-icons/backup.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
-          <div><strong>Резервная копия под вашим контролем</strong><span>Backup / Restore без обязательного облака.</span></div>
+          <img src="/images/feature-icons/local-storage.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+          <div><strong>Данные остаются на вашем компьютере</strong><span>Локальная SQLite-база и резервное копирование под вашим контролем.</span></div>
         </div>
       </div>
       <div class="trust-specs">
