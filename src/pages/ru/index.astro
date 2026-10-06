@@ -49,17 +49,29 @@ const softwareSchema = {
         <p>Сфера → Раздел → Категория → Ресурс. Иерархия повторяет вашу работу, а не устройство файловой системы.</p>
         <div class="demo-tags"><span>Сфера</span><b>→</b><span>Раздел</span><b>→</b><span>Категория</span><b>→</b><span>Ресурс</span></div>
       </div>
-      <div class="feature-illustration feature-illustration-dark">
-        <img src="/images/feature-icons/structure.png" alt="Иерархия рабочего пространства Aite Commander" width="192" height="192" loading="lazy" decoding="async" />
+      <div class="structure-board" aria-label="Пример структуры рабочего пространства">
+        <div class="structure-head"><span>РАБОЧЕЕ ПРОСТРАНСТВО</span><strong>Проект Alpha</strong></div>
+        <div class="structure-line l1"><b>Работа</b><span>Сфера</span></div>
+        <div class="structure-line l2"><b>Клиенты</b><span>Раздел</span></div>
+        <div class="structure-line l3"><b>Проект Alpha</b><span>Категория</span></div>
+        <div class="structure-resources">
+          <span>Figma</span><span>ТЗ.docx</span><span>Материалы</span><span>VS Code</span><span>build.ps1</span>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section product-demo">
     <div class="container demo-grid reverse">
-      <div class="feature-illustration feature-illustration-light feature-illustration-pair" aria-label="Поиск и Quick Look">
-        <img class="feature-png feature-png-search" src="/images/feature-icons/search.png" alt="Поиск ресурсов в Aite Commander" width="192" height="192" loading="lazy" decoding="async" />
-        <img class="feature-png feature-png-preview" src="/images/feature-icons/quick-look.png" alt="Быстрый предпросмотр Quick Look" width="192" height="192" loading="lazy" decoding="async" />
+      <div class="search-visual" aria-label="Поиск и Quick Look">
+        <div class="search-box"><Icon name="search" size={19} /><span>договор alpha</span><kbd>Ctrl F</kbd></div>
+        <div class="search-result active"><b>Договор Alpha.pdf</b><span>Работа / Клиенты / Alpha</span></div>
+        <div class="search-result"><b>Техническое задание.docx</b><span>Работа / Клиенты / Alpha</span></div>
+        <div class="preview-sheet">
+          <div class="preview-label"><Icon name="quick-look" size={15} />QUICK LOOK · SPACE</div>
+          <strong>Договор Alpha</strong>
+          <div class="preview-lines"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
       </div>
       <div class="demo-copy">
         <p class="eyebrow">02 · Найти и посмотреть</p>
@@ -80,8 +92,13 @@ const softwareSchema = {
           <span>Figma</span><span>Папка проекта</span><span>VS Code</span><span>Документация</span>
         </div>
       </div>
-      <div class="feature-illustration feature-illustration-light">
-        <img src="/images/feature-icons/launch.png" alt="Групповой запуск нескольких ресурсов" width="192" height="192" loading="lazy" decoding="async" />
+      <div class="launch-panel">
+        <div class="launch-title"><span>ГРУППОВОЙ ЗАПУСК</span><strong>Проект Alpha</strong></div>
+        <label><input type="checkbox" checked disabled /> Figma — макеты</label>
+        <label><input type="checkbox" checked disabled /> Папка проекта</label>
+        <label><input type="checkbox" checked disabled /> VS Code</label>
+        <label><input type="checkbox" checked disabled /> Документация</label>
+        <button disabled><Icon name="launch" size={18} />Запустить 4 ресурса</button>
       </div>
     </div>
   </section>
@@ -92,13 +109,10 @@ const softwareSchema = {
         <p class="eyebrow eyebrow-on-dark">04 · Передать</p>
         <h2>Делитесь не инструкцией «что открыть», а готовой рабочей структурой</h2>
       </div>
-      <div class="share-clean">
-        <img class="share-clean-icon" src="/images/feature-icons/share.png" alt="Передача готовой структуры Aite Commander другому пользователю" width="128" height="128" loading="lazy" decoding="async" />
-        <div class="share-clean-steps">
-          <div><span>01</span><b>Соберите</b><small>структуру и нужные ресурсы</small></div>
-          <div><span>02</span><b>Экспортируйте</b><small>раздел, категорию или отдельный ресурс</small></div>
-          <div><span>03</span><b>Передайте</b><small>команде, классу или клиенту</small></div>
-        </div>
+      <div class="share-clean-steps">
+        <div><span>01</span><b>Соберите</b><small>структуру и нужные ресурсы</small></div>
+        <div><span>02</span><b>Экспортируйте</b><small>раздел, категорию или отдельный ресурс</small></div>
+        <div><span>03</span><b>Передайте</b><small>команде, классу или клиенту</small></div>
       </div>
       <p class="share-note">Разделы, категории и отдельные ресурсы можно экспортировать и импортировать. При необходимости пакет включает связанные локальные файлы рабочего пространства.</p>
       <a class="button button-light" href="/ru/features/#sharing">Подробнее о передаче</a>
@@ -126,16 +140,6 @@ const softwareSchema = {
         <p class="eyebrow">Local-first</p>
         <h2>Рабочая база остаётся на вашем компьютере</h2>
         <p class="lead">Основные данные хранятся локально в SQLite. Обязательная облачная учётная запись не нужна.</p>
-        <div class="trust-icons">
-          <figure>
-            <img src="/images/feature-icons/local-storage.png" alt="Локальное хранение данных Aite Commander" width="128" height="128" loading="lazy" decoding="async" />
-            <figcaption>Local-first</figcaption>
-          </figure>
-          <figure>
-            <img src="/images/feature-icons/backup.png" alt="Резервное копирование и восстановление Aite Commander" width="128" height="128" loading="lazy" decoding="async" />
-            <figcaption>Backup / Restore</figcaption>
-          </figure>
-        </div>
       </div>
       <div class="trust-specs">
         <div><span>Система</span><b>Windows 10 / 11 · 64-bit</b></div>

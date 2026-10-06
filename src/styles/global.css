@@ -790,3 +790,98 @@ h3 { font-weight: 650; line-height: 1.2; }
   .share-clean-steps { grid-template-columns:1fr; }
   .share-clean-icon { width:190px; }
 }
+
+
+/* 2026-10 homepage stabilization: remove oversized/broken image staging */
+.manifesto { padding:72px 0; }
+.manifesto-grid { gap:64px; }
+.product-demo { padding:84px 0; }
+.demo-grid { gap:56px; }
+
+.structure-board,
+.search-visual,
+.launch-panel {
+  width:100%;
+  max-width:620px;
+  justify-self:end;
+}
+.structure-board { border-radius:16px; overflow:hidden; }
+
+.search-visual {
+  min-height:410px;
+  border-radius:16px;
+  box-shadow:0 18px 50px rgba(8,38,74,.10);
+}
+.preview-sheet { right:-12px; bottom:-18px; width:54%; }
+
+.launch-panel {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:26px;
+  box-shadow:0 18px 50px rgba(8,38,74,.10);
+}
+.launch-title {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding-bottom:18px;
+  margin-bottom:10px;
+  border-bottom:1px solid var(--line);
+}
+.launch-title span { color:var(--muted); font-size:10px; font-weight:900; letter-spacing:.12em; }
+.launch-title strong { color:var(--navy); }
+.launch-panel label {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 0;
+  border-bottom:1px solid #edf1f4;
+  color:var(--navy);
+  font-weight:700;
+}
+.launch-panel button {
+  width:100%;
+  min-height:46px;
+  margin-top:18px;
+  border:0;
+  border-radius:10px;
+  background:var(--navy);
+  color:#fff;
+  font:inherit;
+  font-weight:800;
+}
+
+.share-story { padding:82px 0; }
+.share-heading { max-width:900px; margin-bottom:34px; }
+.share-clean-steps {
+  margin-top:0;
+  max-width:1000px;
+  background:transparent;
+  gap:14px;
+}
+.share-clean-steps > div {
+  min-height:150px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.035);
+  padding:24px;
+}
+.share-note { max-width:900px; }
+
+.trust-v2 { padding:82px 0; }
+.trust-v2-grid { align-items:start; }
+
+@media (max-width:900px) {
+  .manifesto { padding:60px 0; }
+  .manifesto-grid,.demo-grid,.demo-grid.reverse { grid-template-columns:1fr; gap:36px; }
+  .product-demo { padding:64px 0; }
+  .structure-board,.search-visual,.launch-panel { max-width:none; justify-self:stretch; }
+  .search-visual { min-height:380px; }
+}
+@media (max-width:640px) {
+  .manifesto { padding:52px 0; }
+  .product-demo { padding:54px 0; }
+  .search-visual { min-height:360px; padding:16px; }
+  .preview-sheet { position:relative; right:auto; bottom:auto; width:100%; margin-top:18px; }
+  .share-clean-steps { grid-template-columns:1fr; }
+}
