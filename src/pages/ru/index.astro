@@ -37,6 +37,10 @@ const softwareSchema = {
       <div class="manifesto-copy">
         <p>Aite Commander собирает разрозненные цифровые ресурсы вокруг реальной задачи. Документ может лежать рядом с сайтом, папкой проекта, приложением и скриптом — потому что они нужны в одном рабочем контексте.</p>
         <p class="statement">Не по типу ресурса. По смыслу работы.</p>
+        <div class="manifesto-workspace">
+          <img src="/images/feature-icons/workspace.png" alt="" width="112" height="112" loading="lazy" decoding="async" />
+          <div><strong>Один рабочий контекст</strong><span>Сайты, файлы, папки, программы и скрипты — рядом с задачей.</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -47,7 +51,7 @@ const softwareSchema = {
         <p class="eyebrow eyebrow-on-dark">01 · Организация</p>
         <h2>Рабочая структура, а не хаос по всему Windows</h2>
         <p>Сфера → Раздел → Категория → Ресурс. Иерархия повторяет вашу работу, а не устройство файловой системы.</p>
-        <img class="organization-icon" src="/images/feature-icons/workspace.png" alt="" width="128" height="128" loading="lazy" decoding="async" />
+        <img class="organization-icon" src="/images/feature-icons/structure.png" alt="" width="128" height="128" loading="lazy" decoding="async" />
         <div class="demo-tags"><span>Сфера</span><b>→</b><span>Раздел</span><b>→</b><span>Категория</span><b>→</b><span>Ресурс</span></div>
       </div>
       <div class="structure-board" aria-label="Пример структуры рабочего пространства">
@@ -78,6 +82,10 @@ const softwareSchema = {
         <p class="eyebrow">02 · Найти и посмотреть</p>
         <h2>Нужный ресурс находится до того, как вы потеряли мысль</h2>
         <p>Полнотекстовый поиск работает по имени, URL, заметкам и аргументам. Quick Look позволяет быстро проверить содержимое, не разрывая рабочий контекст.</p>
+        <div class="info-icon-pair" aria-label="Поиск и Quick Look">
+          <img src="/images/feature-icons/search.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+          <img src="/images/feature-icons/quick-look.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+        </div>
         <div class="fact-row"><span>PDF</span><span>DOCX</span><span>XLSX</span><span>CSV</span><span>Код</span><span>Архивы</span></div>
       </div>
     </div>
@@ -90,7 +98,7 @@ const softwareSchema = {
         <h2>Не открывайте рабочий день по одному окну</h2>
         <p>Отметьте нужные ресурсы и запускайте их вместе. Для веб-ресурсов можно использовать нужный браузер и профиль.</p>
         <div class="launch-visual" aria-label="Групповой запуск ресурсов">
-          <div class="launch-main-icon"><Icon name="launch" size={46} /></div>
+          <img class="launch-main-png" src="/images/feature-icons/launch.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
           <div class="launch-sequence">
             <span><Icon name="app" size={20} />Figma</span>
             <span><Icon name="folder" size={20} />Папка проекта</span>
@@ -118,19 +126,19 @@ const softwareSchema = {
       </div>
       <div class="share-clean-steps">
         <div class="share-step">
-          <div class="share-step-icon"><Icon name="resources" size={42} /></div>
+          <img src="/images/feature-icons/structure.png" alt="" width="92" height="92" loading="lazy" decoding="async" />
           <span>01</span>
           <b>Соберите</b>
           <small>структуру и нужные ресурсы</small>
         </div>
         <div class="share-step">
-          <div class="share-step-icon"><Icon name="file" size={42} /></div>
+          <img src="/images/feature-icons/backup.png" alt="" width="92" height="92" loading="lazy" decoding="async" />
           <span>02</span>
           <b>Экспортируйте</b>
           <small>раздел, категорию или отдельный ресурс</small>
         </div>
         <div class="share-step">
-          <div class="share-step-icon"><Icon name="share" size={42} /></div>
+          <img src="/images/feature-icons/share.png" alt="" width="92" height="92" loading="lazy" decoding="async" />
           <span>03</span>
           <b>Передайте</b>
           <small>команде, классу или клиенту</small>
@@ -162,9 +170,15 @@ const softwareSchema = {
         <p class="eyebrow">Local-first</p>
         <h2>Рабочая база остаётся на вашем компьютере</h2>
         <p class="lead">Основные данные хранятся локально в SQLite. Обязательная облачная учётная запись не нужна.</p>
-        <div class="trust-visual">
-          <img src="/images/feature-icons/local-storage.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
-          <div><strong>Данные остаются на вашем компьютере</strong><span>Локальная SQLite-база и резервное копирование под вашим контролем.</span></div>
+        <div class="trust-visuals">
+          <div class="trust-visual">
+            <img src="/images/feature-icons/local-storage.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+            <div><strong>Локальное хранение</strong><span>Основная база данных остаётся на вашем компьютере.</span></div>
+          </div>
+          <div class="trust-visual">
+            <img src="/images/feature-icons/backup.png" alt="" width="108" height="108" loading="lazy" decoding="async" />
+            <div><strong>Backup / Restore</strong><span>Резервное копирование и восстановление под вашим контролем.</span></div>
+          </div>
         </div>
       </div>
       <div class="trust-specs">
