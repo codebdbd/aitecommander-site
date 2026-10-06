@@ -686,3 +686,107 @@ h3 { font-weight: 650; line-height: 1.2; }
   .trust-icons figure { width: 132px; }
   .trust-icons img { width: 112px; height: 112px; }
 }
+
+
+/* Clean icon presentation — replaces framed/placeholder treatment */
+.feature-illustration {
+  min-height: 360px;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+}
+.feature-illustration::before { display:none; }
+.feature-illustration img {
+  width: min(62%, 260px);
+  filter: drop-shadow(0 22px 28px rgba(4,24,48,.16));
+}
+.feature-illustration-dark img {
+  width: min(68%, 300px);
+  filter: drop-shadow(0 24px 34px rgba(0,0,0,.30));
+}
+.feature-illustration-light {
+  background: transparent;
+  border: 0;
+}
+.feature-illustration-pair {
+  min-height: 390px;
+  display:block;
+  position:relative;
+}
+.feature-illustration-pair .feature-png-search {
+  position:absolute;
+  width:220px;
+  left:8%;
+  top:14%;
+  transform:none;
+}
+.feature-illustration-pair .feature-png-preview {
+  position:absolute;
+  width:170px;
+  right:9%;
+  bottom:12%;
+  z-index:2;
+}
+.manifesto-hub { display:none; }
+
+.share-story { padding-top:96px; padding-bottom:96px; }
+.share-heading { margin-bottom:36px; }
+.share-clean {
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:64px;
+  align-items:center;
+  margin-top:8px;
+}
+.share-clean-icon {
+  display:block;
+  width:260px;
+  height:auto;
+  justify-self:center;
+  filter:drop-shadow(0 24px 34px rgba(0,0,0,.28));
+}
+.share-clean-steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(255,255,255,.16);
+}
+.share-clean-steps > div {
+  background:#0b2748;
+  padding:24px 22px;
+  min-height:132px;
+}
+.share-clean-steps span {
+  display:block;
+  color:var(--yellow);
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:18px;
+}
+.share-clean-steps b {
+  display:block;
+  color:#fff;
+  font-size:18px;
+  margin-bottom:6px;
+}
+.share-clean-steps small {
+  color:#aebfd0;
+  line-height:1.45;
+}
+.share-note { margin-top:30px; }
+
+@media (max-width:1050px) {
+  .feature-illustration { min-height:300px; }
+  .feature-illustration-pair { min-height:340px; }
+  .share-clean { grid-template-columns:1fr; gap:30px; }
+  .share-clean-icon { width:220px; }
+}
+@media (max-width:720px) {
+  .feature-illustration { min-height:250px; }
+  .feature-illustration-dark img { width:220px; }
+  .feature-illustration-pair { min-height:300px; }
+  .feature-illustration-pair .feature-png-search { width:180px; left:4%; top:10%; }
+  .feature-illustration-pair .feature-png-preview { width:140px; right:3%; bottom:9%; }
+  .share-clean-steps { grid-template-columns:1fr; }
+  .share-clean-icon { width:190px; }
+}
