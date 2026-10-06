@@ -958,3 +958,39 @@ h3 { font-weight: 650; line-height: 1.2; }
   .trust-visual { align-items:flex-start; }
   .trust-visual img { width:82px; height:82px; flex-basis:82px; }
 }
+
+
+/* Sharing steps: one illustration per step */
+.share-heading-with-icon { display:block; max-width:900px; }
+.share-heading-with-icon img { display:none; }
+.share-clean-steps > .share-step {
+  position:relative;
+  min-height:250px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  padding:26px 28px 28px;
+}
+.share-step img {
+  display:block;
+  width:86px;
+  height:86px;
+  object-fit:contain;
+  margin-bottom:18px;
+  filter:drop-shadow(0 12px 18px rgba(0,0,0,.26));
+}
+.share-step span {
+  margin-bottom:10px;
+}
+.share-step b {
+  font-size:20px;
+  margin-bottom:7px;
+}
+.share-step small {
+  max-width:240px;
+}
+@media (max-width:720px) {
+  .share-clean-steps > .share-step { min-height:210px; }
+  .share-step img { width:76px; height:76px; }
+}
