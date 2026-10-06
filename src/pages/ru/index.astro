@@ -92,17 +92,22 @@ const softwareSchema = {
         <p class="eyebrow">03 · Запустить</p>
         <h2>Не открывайте рабочий день по одному окну</h2>
         <p>Отметьте нужные ресурсы и запускайте их вместе. Для веб-ресурсов можно использовать нужный браузер и профиль.</p>
-        <img class="info-icon-single" src="/images/feature-icons/launch.png" alt="" width="112" height="112" loading="lazy" decoding="async" />
-        <div class="launch-sequence">
-          <span>Figma</span><span>Папка проекта</span><span>VS Code</span><span>Документация</span>
+        <div class="launch-visual" aria-label="Групповой запуск ресурсов">
+          <div class="launch-main-icon"><Icon name="launch" size={46} /></div>
+          <div class="launch-sequence">
+            <span><Icon name="app" size={20} />Figma</span>
+            <span><Icon name="folder" size={20} />Папка проекта</span>
+            <span><Icon name="app" size={20} />VS Code</span>
+            <span><Icon name="file" size={20} />Документация</span>
+          </div>
         </div>
       </div>
       <div class="launch-panel">
         <div class="launch-title"><span>ГРУППОВОЙ ЗАПУСК</span><strong>Проект Alpha</strong></div>
-        <label><input type="checkbox" checked disabled /> Figma — макеты</label>
-        <label><input type="checkbox" checked disabled /> Папка проекта</label>
-        <label><input type="checkbox" checked disabled /> VS Code</label>
-        <label><input type="checkbox" checked disabled /> Документация</label>
+        <label><input type="checkbox" checked disabled /><Icon name="app" size={18} /> Figma — макеты</label>
+        <label><input type="checkbox" checked disabled /><Icon name="folder" size={18} /> Папка проекта</label>
+        <label><input type="checkbox" checked disabled /><Icon name="app" size={18} /> VS Code</label>
+        <label><input type="checkbox" checked disabled /><Icon name="file" size={18} /> Документация</label>
         <button disabled><Icon name="launch" size={18} />Запустить 4 ресурса</button>
       </div>
     </div>
