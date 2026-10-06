@@ -93,15 +93,20 @@ const softwareSchema = {
         <p class="eyebrow eyebrow-on-dark">04 · Передать</p>
         <h2>Делитесь не инструкцией «что открыть», а готовой рабочей структурой</h2>
       </div>
-      <div class="share-flow-v2">
-        <div class="person-node"><span>1</span><b>Создатель</b><small>собирает контекст</small></div>
-        <div class="flow-line"><i></i><strong>.aitesec</strong></div>
-        <div class="package-node"><Icon name="share" size={28} class="share-icon" /><b>Проект Alpha</b><span>структура + ресурсы</span></div>
-        <div class="flow-line"><i></i><strong>Импорт</strong></div>
-        <div class="recipients">
-          <div><span>2</span><b>Команда</b></div>
-          <div><span>3</span><b>Класс</b></div>
-          <div><span>4</span><b>Клиент</b></div>
+      <div class="share-story-grid">
+        <div class="feature-illustration share-illustration" aria-label="Передача готового рабочего пространства">
+          <img src="/images/feature-icons/share.png" alt="Передача готовой структуры Aite Commander другому пользователю" width="128" height="128" loading="lazy" decoding="async" />
+        </div>
+        <div class="share-flow-v2">
+          <div class="person-node"><span>1</span><b>Создатель</b><small>собирает контекст</small></div>
+          <div class="flow-line"><i></i><strong>.aitesec</strong></div>
+          <div class="package-node"><Icon name="share" size={28} class="share-icon" /><b>Проект Alpha</b><span>структура + ресурсы</span></div>
+          <div class="flow-line"><i></i><strong>Импорт</strong></div>
+          <div class="recipients">
+            <div><span>2</span><b>Команда</b></div>
+            <div><span>3</span><b>Класс</b></div>
+            <div><span>4</span><b>Клиент</b></div>
+          </div>
         </div>
       </div>
       <p class="share-note">Разделы, категории и отдельные ресурсы можно экспортировать и импортировать. При необходимости пакет включает связанные локальные файлы рабочего пространства.</p>
@@ -130,6 +135,16 @@ const softwareSchema = {
         <p class="eyebrow">Local-first</p>
         <h2>Рабочая база остаётся на вашем компьютере</h2>
         <p class="lead">Основные данные хранятся локально в SQLite. Обязательная облачная учётная запись не нужна.</p>
+        <div class="trust-icons">
+          <figure>
+            <img src="/images/feature-icons/local-storage.png" alt="Локальное хранение данных Aite Commander" width="128" height="128" loading="lazy" decoding="async" />
+            <figcaption>Local-first</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/feature-icons/backup.png" alt="Резервное копирование и восстановление Aite Commander" width="128" height="128" loading="lazy" decoding="async" />
+            <figcaption>Backup / Restore</figcaption>
+          </figure>
+        </div>
       </div>
       <div class="trust-specs">
         <div><span>Система</span><b>Windows 10 / 11 · 64-bit</b></div>
